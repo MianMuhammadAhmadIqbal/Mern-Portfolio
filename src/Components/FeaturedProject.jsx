@@ -12,6 +12,7 @@ const ShowcaseCard = ({ project, reversed }) => {
     metrics,
     mockUrl,
     mockWidgets,
+    image,
   } = project;
 
   const copy = (
@@ -62,8 +63,7 @@ const ShowcaseCard = ({ project, reversed }) => {
       transition={{ duration: 0.6 }}
       className="w-full lg:w-[calc(50%-2.5rem)]"
     >
-      {/* Mocked dashboard preview — no real screenshot, so we build the
-          impression with the same terminal/receipt vocabulary as the hero */}
+      {/* Real screenshot when available, otherwise the mocked preview */}
       <div className="rounded-2xl border border-white/[0.06] bg-black/30 overflow-hidden mb-6">
         <div className="flex items-center gap-1.5 border-b border-white/[0.06] px-4 py-2.5">
           <span className="h-2 w-2 rounded-full bg-red-500/40" />
@@ -73,24 +73,32 @@ const ShowcaseCard = ({ project, reversed }) => {
             {mockUrl}
           </span>
         </div>
-        <div className="p-4 grid grid-cols-3 gap-2">
-          {mockWidgets.map((label, i) => (
-            <motion.div
-              key={label}
-              initial={{ scaleY: 0.4, opacity: 0.4 }}
-              whileInView={{ scaleY: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              style={{ transformOrigin: "bottom" }}
-              className="rounded-lg border border-white/[0.05] bg-white/[0.02] p-3 h-24 flex flex-col justify-between"
-            >
-              <span className="font-mono text-[10px] text-neutral-500">
-                {label}
-              </span>
-              <span className="h-1.5 w-3/4 rounded-full bg-gradient-to-r from-signal-cyan/60 to-signal-violet/60" />
-            </motion.div>
-          ))}
-        </div>
+        {image ? (
+          <img
+            src={image}
+            alt={`${title} dashboard`}
+            className="w-full h-auto object-cover object-top"
+          />
+        ) : (
+          <div className="p-4 grid grid-cols-3 gap-2">
+            {mockWidgets.map((label, i) => (
+              <motion.div
+                key={label}
+                initial={{ scaleY: 0.4, opacity: 0.4 }}
+                whileInView={{ scaleY: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                style={{ transformOrigin: "bottom" }}
+                className="rounded-lg border border-white/[0.05] bg-white/[0.02] p-3 h-24 flex flex-col justify-between"
+              >
+                <span className="font-mono text-[10px] text-neutral-500">
+                  {label}
+                </span>
+                <span className="h-1.5 w-3/4 rounded-full bg-gradient-to-r from-signal-cyan/60 to-signal-violet/60" />
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="space-y-4">

@@ -2,6 +2,7 @@ import project1 from "../assets/projects/todo-app.png";
 import project2 from "../assets/projects/github-finder.png";
 import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/ai-app-interview.png";
+import restoposDashboard from "../assets/projects/restopos-dashboard.png";
 
 export const HERO_CONTENT = `I design and ship full-stack products end to end — React on the front, Node/Express/MongoDB underneath, and everything wired together to survive real traffic, not just a demo.`;
 
@@ -45,8 +46,7 @@ export const JOURNEY = [
   {
     year: "Now",
     title: "Appverse Technologies internship",
-    detail:
-      "Frontend Developer Intern.",
+    detail: "Frontend Developer Intern.",
   },
 ];
 
@@ -167,6 +167,7 @@ export const FEATURED_PROJECTS = [
     title: "RestoPOS",
     tagline:
       "A full restaurant point-of-sale system, built and deployed for a real client.",
+    image: restoposDashboard,
     description:
       "RestoPOS handles the whole floor-to-kitchen loop — orders, billing, inventory, and staff roles — as a production MERN application, not a portfolio demo. It runs on MongoDB Atlas with an Express/Node API, a React/Redux/Tailwind frontend, and a deployment pipeline split across Render and Vercel.",
     highlights: [
@@ -266,7 +267,7 @@ export const PROJECTS = [
     description:
       "Searches GitHub's public API for any username and renders live stats, bio, and recent repositories in real time.",
     technologies: ["HTML", "CSS", "JavaScript", "REST API"],
-    tags: ["Frontend", "REST API",],
+    tags: ["Frontend", "REST API"],
     link: "https://github-profile-finder-jet.vercel.app/",
     githubLink:
       "https://github.com/MianMuhammadAhmadIqbal/github-profile-finder",
