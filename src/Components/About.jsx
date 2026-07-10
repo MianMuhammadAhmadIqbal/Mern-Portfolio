@@ -1,6 +1,6 @@
-import aboutImg from "../assets/about.jpg";
 import { ABOUT_TEXT, JOURNEY } from "../constants";
 import { motion } from "framer-motion";
+import AnimatedLaptop from "./AnimatedLaptop";
 
 const About = () => {
   return (
@@ -20,15 +20,8 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="w-full lg:w-2/5 p-4 flex justify-center lg:sticky lg:top-28"
         >
-          <div className="w-full max-w-[300px]">
-            <div className="relative">
-              <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-signal-cyan/20 to-signal-violet/20 blur-xl" />
-              <img
-                className="relative rounded-2xl w-full h-auto object-cover border border-white/[0.08]"
-                src={aboutImg}
-                alt="Muhammad Ahmad Iqbal"
-              />
-            </div>
+          <div className="w-full max-w-[340px]">
+            <AnimatedLaptop />
             <p className="mt-6 text-sm leading-relaxed text-neutral-400 text-center lg:text-left">
               {ABOUT_TEXT}
             </p>
