@@ -5,7 +5,11 @@ import project4 from "../assets/projects/ai-app-interview.png";
 
 export const HERO_CONTENT = `I design and ship full-stack products end to end — React on the front, Node/Express/MongoDB underneath, and everything wired together to survive real traffic, not just a demo.`;
 
-export const ABOUT_TEXT = `I'm a Computer Science student at KFUEIT and a Full Stack MERN Developer currently interning at Appverse Technologies. I started with HTML, CSS, and JavaScript, moved into React, and kept going until the whole stack — Node, Express, MongoDB, auth, deployment — was mine to reason about. My most recent build, RestoPOS, is a production restaurant point-of-sale system with role-based permissions, OTP email flows, offline order queuing, and Cloudinary-backed receipts, deployed and running on Render and Vercel. I like the parts other developers skip: the trust-proxy config, the hardcoded-URL bug that only shows up in production, the migration that has to happen without downtime.`;
+export const ABOUT_TEXT = `I'm a Computer Science student at KFUEIT and a Full Stack MERN Developer passionate about building modern, scalable, and user-focused web applications. I started my journey with HTML, CSS, and JavaScript, then expanded my skills into React and full-stack development with Node.js, Express.js, and MongoDB.
+
+I focus on creating clean, efficient, and maintainable applications with strong foundations in frontend architecture, backend development, API integration, authentication, database management, and deployment. I enjoy solving the problems that often go unnoticed — the edge cases, the production bugs, the configuration details, and the small improvements that make applications reliable and ready for real-world use.
+
+`;
 
 export const JOURNEY = [
   {
@@ -88,13 +92,33 @@ export const EDUCATION = [
     description:
       "Building strong foundational roots in software engineering, algorithms, and application architectures.",
     coursework: [
-        "Programming Fundamentals (C++)",
-  "Object-Oriented Programming (Java)",
-  "Data Structures & Algorithms",
-  "Database Management Systems",
-  "Software Engineering",
-  "Artificial Intelligence",
-  "Python Programming"
+      "Programming Fundamentals (C++)",
+      "Object-Oriented Programming (Java)",
+      "Data Structures & Algorithms",
+      "Database Management Systems",
+      "Software Engineering",
+      "Artificial Intelligence",
+      "Python Programming",
+    ],
+  },
+  {
+    degree: "Professional Full-Stack Web Development Training",
+    institution: "Promoteez International IT Training Institute",
+    duration: "2024",
+    description:
+      "Completed hands-on full-stack web development training focused on building responsive and scalable web applications. Developed frontend interfaces, created backend APIs, managed databases, and learned modern software development practices.",
+    coursework: [
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES6+)",
+      "React JS",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "REST APIs",
+      "Git & GitHub",
+      "Responsive Web Design",
     ],
   },
 ];
