@@ -88,13 +88,13 @@ export const EDUCATION = [
     description:
       "Building strong foundational roots in software engineering, algorithms, and application architectures.",
     coursework: [
-      "Programming Fundamentals (C++)",
-      "Object-Oriented Programming (Java)",
-      "Data Structures & Algorithms",
-      "Database Management Systems",
-      "Software Engineering",
-      "Artificial Intelligence",
-      "Python Programming",
+        "Programming Fundamentals (C++)",
+  "Object-Oriented Programming (Java)",
+  "Data Structures & Algorithms",
+  "Database Management Systems",
+  "Software Engineering",
+  "Artificial Intelligence",
+  "Python Programming"
     ],
   },
 ];
@@ -134,20 +134,6 @@ export const EXPERIENCES = [
       "MongoDB",
       "Render",
       "Vercel",
-    ],
-  },
-  {
-    year: "2024",
-    role: "Trainee Frontend Developer",
-    company: "Promoteez International IT Training Institute",
-    description:
-      "Built responsive full-stack web applications using the MERN stack. Developed modern user interfaces with React and Tailwind CSS, created RESTful APIs with Node.js and Express, integrated MongoDB for data management, implemented JWT authentication, and followed clean code, accessibility, and performance best practices through real-world projects.",
-    technologies: [
-      "HTML5",
-      "CSS3",
-      "JavaScript (ES6+)",
-      "Tailwind CSS",
-      "React JS",
     ],
   },
 ];
