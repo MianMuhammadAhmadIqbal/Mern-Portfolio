@@ -36,16 +36,27 @@ const GithubIcon = () => (
 );
 
 const Projects = () => {
+  // Grid layout when there's more than one project (the normal, future state);
+  // a single centered column for right now, while only RestoPOS is listed —
+  // keeps the section from looking like a half-empty grid.
+  const gridClass =
+    PROJECTS.length > 1
+      ? "grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto"
+      : "grid gap-6 max-w-md mx-auto";
+
   return (
-    <div id="projects" className="border-b border-white/[0.06] py-24 scroll-mt-24">
+    <div
+      id="projects"
+      className="border-b border-white/[0.06] py-24 scroll-mt-24"
+    >
       <div className="text-center mb-16">
         <span className="eyebrow">Selected work</span>
         <h2 className="section-heading mt-3">
-          Technical <span className="text-neutral-500">Projects</span>
+          Some projects <span className="text-neutral-500">I've made</span>
         </h2>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div className={gridClass}>
         {PROJECTS.map((project, index) => (
           <motion.div
             key={project.title}
@@ -93,24 +104,7 @@ const Projects = () => {
                 ))}
               </div>
 
-              <div className="mt-5 flex items-center gap-6 text-sm font-medium">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-white hover:text-signal-cyan transition-colors"
-                >
-                  Live Demo <ArrowUpRight />
-                </a>
-                <a
-                  href={project.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-neutral-500 hover:text-neutral-300 transition-colors"
-                >
-                  Source <GithubIcon />
-                </a>
-              </div>
+              <div className="mt-5 flex items-center gap-6 text-sm font-medium"></div>
             </div>
           </motion.div>
         ))}

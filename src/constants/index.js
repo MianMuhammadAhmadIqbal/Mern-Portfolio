@@ -1,7 +1,3 @@
-import project1 from "../assets/projects/todo-app.png";
-import project2 from "../assets/projects/github-finder.png";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/ai-app-interview.png";
 import restoposDashboard from "../assets/projects/restopos-dashboard.png";
 
 export const HERO_CONTENT = `I design and ship full-stack products end to end — React on the front, Node/Express/MongoDB underneath, and everything wired together to survive real traffic, not just a demo.`;
@@ -250,47 +246,17 @@ export const FEATURED_PROJECTS = [
   },
 ];
 
+// Trimmed down to just the POS system for now — add new entries here as
+// new websites/projects get built. image reuses the RestoPOS dashboard
+// screenshot already imported above.
 export const PROJECTS = [
   {
-    title: "AI Interview Prep App",
-    image: project4,
+    title: "RestoPOS — Restaurant POS System",
+    image: restoposDashboard,
     description:
-      "Generates real interview questions by topic and difficulty, then uses Claude AI to evaluate answers and return detailed, scored feedback.",
-    technologies: ["React", "Tailwind CSS", "Claude AI", "Vite"],
-    tags: ["Frontend", "AI"],
-    link: "https://ai-interview-prep-inky-theta.vercel.app/",
-    githubLink: "https://github.com/MianMuhammadAhmadIqbal/ai-interview-prep",
-  },
-  {
-    title: "GitHub Finder",
-    image: project2,
-    description:
-      "Searches GitHub's public API for any username and renders live stats, bio, and recent repositories in real time.",
-    technologies: ["HTML", "CSS", "JavaScript", "REST API"],
-    tags: ["Frontend", "REST API"],
-    link: "https://github-profile-finder-jet.vercel.app/",
-    githubLink:
-      "https://github.com/MianMuhammadAhmadIqbal/github-profile-finder",
-  },
-  {
-    title: "Task Management To-Do App",
-    image: project1,
-    description:
-      "A productivity app with full client-side state persistence — create, edit inline, toggle status, and delete tasks.",
-    technologies: ["HTML5", "CSS3", "JavaScript (ES6+)"],
-    tags: ["Frontend"],
-    link: "https://mianmuhammadahmadiqbal.github.io/todo/",
-    githubLink: "https://github.com/MianMuhammadAhmadIqbal/todo",
-  },
-  {
-    title: "Portfolio Website (v1)",
-    image: project3,
-    description:
-      "The previous iteration of this portfolio — the baseline this redesign was built on top of.",
-    technologies: ["HTML", "CSS", "Tailwind CSS", "React"],
-    tags: ["Frontend"],
-    link: "https://portfolio-seven-theta-85.vercel.app/",
-    githubLink: "https://github.com/MianMuhammadAhmadIqbal/portfolio",
+      "A production restaurant point-of-sale system covering orders, billing, inventory, and role-based staff access — built and deployed for a real client.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Redux"],
+    tags: ["Full Stack", "MERN", "POS"],
   },
 ];
 
