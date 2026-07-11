@@ -52,7 +52,7 @@ const Projects = () => {
       <div className="text-center mb-16">
         <span className="eyebrow">Selected work</span>
         <h2 className="section-heading mt-3">
-          Some projects <span className="text-neutral-500">I've made</span>
+          Projects<span className="text-neutral-500">I've Built</span>
         </h2>
       </div>
 
