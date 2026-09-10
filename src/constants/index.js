@@ -1,4 +1,5 @@
 import restoposDashboard from "../assets/projects/restopos-dashboard.png";
+// import cueCommandDashboard from "../assets/projects/cue-command-dashboard.png";
 
 export const HERO_CONTENT = `I design and ship full-stack products end to end — React on the front, Node/Express/MongoDB underneath, and everything wired together to survive real traffic, not just a demo.`;
 
@@ -40,6 +41,12 @@ export const JOURNEY = [
       "A full restaurant POS system: granular permissions, OTP email, PDF receipts, offline queuing, Cloudinary uploads. Deployed and debugged in production.",
   },
   {
+    year: "2026",
+    title: "Cue Command — multi-tenant SaaS",
+    detail:
+      "A multi-tenant snooker club management platform for real clubs across Pakistan, with real-time sync, billing, and a full permissions system.",
+  },
+  {
     year: "Now",
     title: "Appverse Technologies internship",
     detail: "Frontend Developer Intern.",
@@ -54,6 +61,7 @@ export const TECH_STACK = [
       "Vite",
       "Tailwind CSS",
       "Redux",
+      "RTK Query",
       "React Router",
       "Framer Motion",
     ],
@@ -65,6 +73,7 @@ export const TECH_STACK = [
       "Express.js",
       "JWT Auth",
       "REST APIs",
+      "Socket.IO",
       "Nodemailer",
       "Multer",
     ],
@@ -75,7 +84,14 @@ export const TECH_STACK = [
   },
   {
     group: "DevOps & Tools",
-    items: ["Vercel", "Render", "Cloudinary", "Git & GitHub", "Postman"],
+    items: [
+      "Vercel",
+      "Render",
+      "Cloudinary",
+      "Resend",
+      "Git & GitHub",
+      "Postman",
+    ],
   },
 ];
 
@@ -121,7 +137,7 @@ export const EDUCATION = [
 
 export const EXPERIENCES = [
   {
-    year: "2026 — Present",
+    year: "28-JUN-2026 — 22-AUG-2026",
     role: "Frontend Developer Intern",
     company: "Appverse Technologies",
     description:
@@ -146,12 +162,13 @@ export const EXPERIENCES = [
     role: "Freelance Full Stack Developer",
     company: "Independent Client Work",
     description:
-      "Delivered RestoPOS, a production MERN restaurant point-of-sale system, plus Cryptool, FitTrack and Velora frontend . Handled the full lifecycle: build, debug, deploy, and hand off.",
+      "Delivered RestoPOS, a production MERN restaurant point-of-sale system, Cue Command, a multi-tenant SaaS snooker club management platform, plus Cryptool, FitTrack and Velora frontend. Handled the full lifecycle: build, debug, deploy, and hand off.",
     technologies: [
       "React",
       "Node.js",
       "Express",
       "MongoDB",
+      "Socket.IO",
       "Render",
       "Vercel",
     ],
@@ -208,47 +225,60 @@ export const FEATURED_PROJECTS = [
     mockWidgets: ["Orders", "Inventory", "Staff"],
   },
   {
-    title: "Cryptool",
+    title: "Cue Command",
     tagline:
-      "A crypto analytics dashboard, delivered as a frontend client project.",
+      "A multi-tenant SaaS platform for snooker clubs, from bookings to daily cash reconciliation.",
+    // image: cueCommandDashboard,
     description:
-      "Cryptool is a data-dense crypto dashboard built entirely on the frontend — live market prices, historical charts, and portfolio tracking laid out for fast scanning rather than scrolling. The brief was pure UI/UX and data-handling: consume a market API, keep the numbers readable at a glance, and make a chart-heavy screen still feel calm.",
+      "Cue Command is a multi-tenant snooker club management platform built for real clubs across Pakistan — bookings, per-game billing, POS, customer and supplier ledgers, and staff permissions, all isolated per tenant on a shared MongoDB backend and synced live over WebSockets.",
     highlights: [
       {
-        label: "Live market data",
+        label: "True multi-tenancy",
         detail:
-          "Price feeds pulled from a public crypto API and normalized into a consistent shape across every widget.",
+          "Tenant-scoped MongoDB plugins isolate every club's data on a shared database and schema.",
       },
       {
-        label: "Interactive charts",
+        label: "Real-time sync",
         detail:
-          "Historical price charts with timeframe switching and hover tooltips, built for quick comparison, not clutter.",
+          "Socket.IO pushes table status, bookings, and POS updates live across every connected device in a club.",
       },
       {
-        label: "Portfolio tracking",
+        label: "37-key permissions system",
         detail:
-          "Client-side gain/loss calculations against holdings, recalculated as prices update.",
+          "Granular, tenant-aware permission keys governing exactly what each staff role can see and do.",
       },
       {
-        label: "Dense, responsive layout",
+        label: "Cash & billing operations",
         detail:
-          "A multi-widget dashboard grid that reflows cleanly down to a single column on mobile without losing hierarchy.",
+          "Per-game billing, POS, membership benefits, daily closing with cash reconciliation, and customer/supplier ledgers.",
+      },
+      {
+        label: "Analytics & PWA",
+        detail:
+          "Timezone-correct analytics for Pakistan, a recycle bin for safe deletes, Resend-powered email, and a full PWA setup.",
       },
     ],
-    stack: ["React", "Tailwind CSS", "Recharts", "REST API", "Vite"],
+    stack: [
+      "React",
+      "Redux Toolkit",
+      "RTK Query",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.IO",
+      "Resend",
+    ],
     metrics: [
-      { value: "5+", label: "Dashboard widgets" },
-      { value: "Live", label: "Price updates" },
-      { value: "100%", label: "Client delivered" },
+      { value: "37", label: "Permission keys" },
+      { value: "1st", label: "Live club onboarded" },
+      { value: "Real-time", label: "Sync across devices" },
     ],
-    mockUrl: "cryptool.app/dashboard",
-    mockWidgets: ["Market", "Charts", "Portfolio"],
+    mockUrl: "cuecommand.app/dashboard",
+    mockWidgets: ["Bookings", "POS", "Ledgers"],
   },
 ];
 
-// Trimmed down to just the POS system for now — add new entries here as
-// new websites/projects get built. image reuses the RestoPOS dashboard
-// screenshot already imported above.
 export const PROJECTS = [
   {
     title: "RestoPOS — Restaurant POS System",
@@ -257,6 +287,28 @@ export const PROJECTS = [
       "A production restaurant point-of-sale system covering orders, billing, inventory, and role-based staff access — built and deployed for a real client.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Redux"],
     tags: ["Full Stack", "MERN", "POS"],
+  },
+  {
+    title: "Cue Command — Snooker Club SaaS",
+    // image: cueCommandDashboard,
+    description:
+      "A multi-tenant SaaS platform for managing snooker clubs — bookings, per-game billing, POS, ledgers, and real-time sync across devices, live with its first real club.",
+    technologies: [
+      "React",
+      "RTK Query",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Socket.IO",
+    ],
+    tags: ["Full Stack", "MERN", "SaaS", "Multi-tenant"],
+  },
+  {
+    title: "Cryptool — Crypto Analytics Dashboard",
+    description:
+      "A data-dense crypto dashboard with live market prices, historical charts, and portfolio tracking, built as a frontend client project.",
+    technologies: ["React", "Tailwind CSS", "Recharts", "REST API", "Vite"],
+    tags: ["Frontend", "Dashboard", "Data Viz"],
   },
 ];
 
@@ -284,7 +336,7 @@ export const SERVICES = [
 ];
 
 export const STATS = [
-  { value: "5+", label: "Projects shipped" },
+  { value: "6+", label: "Projects shipped" },
   { value: "10+", label: "Technologies" },
   { value: "10+", label: "GitHub repositories" },
   { value: "2+", label: "Years learning & building" },
