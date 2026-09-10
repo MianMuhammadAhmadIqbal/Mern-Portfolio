@@ -35,10 +35,56 @@ const GithubIcon = () => (
   </svg>
 );
 
+// Animated mock-browser fallback for projects without a screenshot.
+// Uses mockUrl (address bar text) and mockWidgets (floating pill labels)
+// over a slowly shifting gradient, so the card never looks empty or broken.
+const AnimatedMock = ({ mockUrl, mockWidgets = [] }) => (
+  <div className="relative w-full h-full bg-ink-900 overflow-hidden">
+    <motion.div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(120deg, rgba(34,211,238,0.15), rgba(168,85,247,0.12), rgba(34,211,238,0.15))",
+        backgroundSize: "200% 200%",
+      }}
+      animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+      transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+    />
+
+    <div className="absolute inset-0 flex flex-col p-4">
+      {mockUrl && (
+        <div className="flex items-center gap-1.5 rounded-md bg-ink-950/70 backdrop-blur border border-white/10 px-3 py-1.5 w-fit">
+          <span className="w-2 h-2 rounded-full bg-red-400/60" />
+          <span className="w-2 h-2 rounded-full bg-yellow-400/60" />
+          <span className="w-2 h-2 rounded-full bg-green-400/60" />
+          <span className="ml-2 text-[10px] font-mono text-neutral-400">
+            {mockUrl}
+          </span>
+        </div>
+      )}
+
+      <div className="flex-1 flex items-center justify-center gap-3 flex-wrap px-4">
+        {mockWidgets.map((widget, i) => (
+          <motion.span
+            key={widget}
+            className="rounded-lg bg-ink-950/60 backdrop-blur border border-white/10 px-4 py-2 text-xs font-mono text-signal-cyan/90"
+            animate={{ y: [0, -6, 0] }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.4,
+            }}
+          >
+            {widget}
+          </motion.span>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
 const Projects = () => {
-  // Grid layout when there's more than one project (the normal, future state);
-  // a single centered column for right now, while only RestoPOS is listed —
-  // keeps the section from looking like a half-empty grid.
   const gridClass =
     PROJECTS.length > 1
       ? "grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto"
@@ -67,11 +113,18 @@ const Projects = () => {
             className="group glow-border rounded-2xl bg-white/[0.02] overflow-hidden hover:bg-white/[0.03] transition-colors duration-300"
           >
             <div className="relative overflow-hidden aspect-video bg-ink-900">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <AnimatedMock
+                  mockUrl={project.mockUrl}
+                  mockWidgets={project.mockWidgets}
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-transparent" />
               <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
                 {project.tags.map((tag) => (

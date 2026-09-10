@@ -1,5 +1,5 @@
 import restoposDashboard from "../assets/projects/restopos-dashboard.png";
-// import cueCommandDashboard from "../assets/projects/cue-command-dashboard.png";
+import cueCommandDashboard from "../assets/projects/cue-command-dashboard.png";
 
 export const HERO_CONTENT = `I design and ship full-stack products end to end — React on the front, Node/Express/MongoDB underneath, and everything wired together to survive real traffic, not just a demo.`;
 
@@ -47,7 +47,7 @@ export const JOURNEY = [
       "A multi-tenant snooker club management platform for real clubs across Pakistan, with real-time sync, billing, and a full permissions system.",
   },
   {
-    year: "Now",
+    year: "2026",
     title: "Appverse Technologies internship",
     detail: "Frontend Developer Intern.",
   },
@@ -228,7 +228,7 @@ export const FEATURED_PROJECTS = [
     title: "Cue Command",
     tagline:
       "A multi-tenant SaaS platform for snooker clubs, from bookings to daily cash reconciliation.",
-    // image: cueCommandDashboard,
+    image: cueCommandDashboard,
     description:
       "Cue Command is a multi-tenant snooker club management platform built for real clubs across Pakistan — bookings, per-game billing, POS, customer and supplier ledgers, and staff permissions, all isolated per tenant on a shared MongoDB backend and synced live over WebSockets.",
     highlights: [
@@ -290,7 +290,7 @@ export const PROJECTS = [
   },
   {
     title: "Cue Command — Snooker Club SaaS",
-    // image: cueCommandDashboard,
+    image: cueCommandDashboard,
     description:
       "A multi-tenant SaaS platform for managing snooker clubs — bookings, per-game billing, POS, ledgers, and real-time sync across devices, live with its first real club.",
     technologies: [
@@ -309,6 +309,8 @@ export const PROJECTS = [
       "A data-dense crypto dashboard with live market prices, historical charts, and portfolio tracking, built as a frontend client project.",
     technologies: ["React", "Tailwind CSS", "Recharts", "REST API", "Vite"],
     tags: ["Frontend", "Dashboard", "Data Viz"],
+    mockUrl: "cryptool.app/dashboard",
+    mockWidgets: ["Market", "Charts", "Portfolio"],
   },
 ];
 
